@@ -1,4 +1,4 @@
-<head>
+<html><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Concilio VA – Concilio Internacional Visión en Acción</title>
@@ -206,6 +206,90 @@
       font-size: 0.95rem;
       box-shadow: var(--sombra-suave);
     }
+    
+    .contact-section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  color: #222;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.contact-info, .contact-form {
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5a;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #005eab;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #004e91;
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
     @media (min-width: 768px) {
       nav a { font-size: 1.1rem; }
@@ -275,6 +359,37 @@
         </div>
       </div>
     </section>
+    <section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <!-- Lado izquierdo: WhatsApp -->
+    <div class="contact-info card">
+      <h2>¿Necesitas ayuda o tienes preguntas?</h2>
+      <p>Contáctanos directamente por WhatsApp y con gusto te atenderemos.</p>
+      <a href="https://wa.me/573001112233" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+      </a>
+    </div>
+
+    <!-- Lado derecho: Formulario -->
+    <div class="contact-form card">
+      <h2>Envíanos un mensaje</h2>
+      <form action="#" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+    
   </main>
 
   <footer id="contacto">
