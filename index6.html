@@ -1,0 +1,579 @@
+<html><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concilio VA – Concilio Internacional Visión en Acción</title>
+  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+  <meta name="msapplication-TileImage" content="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --azul-oscuro: #1a2a3a;
+      --azul-medio: #3c6e71;
+      --azul-claro: #d9e6ed;
+      --gris-suave: #f5f8fa;
+      --blanco: #ffffff;
+      --texto-principal: #1e1e1e;
+      --sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --fuente-principal: 'Inter', sans-serif;
+      --ancho-maximo: 1100px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--fuente-principal);
+      background-color: var(--gris-suave);
+      color: var(--texto-principal);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--blanco);
+      box-shadow: var(--sombra-suave);
+    }
+
+    header img {
+      max-width: 160px;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: var(--blanco);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--blanco);
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: var(--ancho-maximo);
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, var(--blanco), var(--azul-claro));
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--sombra-suave);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: var(--azul-oscuro);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .section-salvacion {
+      background: var(--blanco);
+      border-radius: 1rem;
+      box-shadow: var(--sombra-suave);
+      padding: 3rem 2rem;
+      margin: 4rem auto;
+      max-width: 800px;
+      line-height: 1.8;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    .section-salvacion h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--azul-medio);
+    }
+
+    .section-salvacion p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: var(--texto-principal);
+    }
+
+    .section-salvacion strong {
+      color: var(--azul-oscuro);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .info-section {
+      background: linear-gradient(to right, #243b55, #141e30);
+      color: var(--blanco);
+      padding: 3rem 1.5rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .info-block h5 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #e3f2fd;
+    }
+
+    .info-block p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      color: #ffffff;
+      font-size: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #90caf9;
+      transform: scale(1.2);
+    }
+
+    footer {
+      background-color: #1a2a3a;
+      color: var(--blanco);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      font-size: 0.95rem;
+      box-shadow: var(--sombra-suave);
+    }
+    
+    .contact-section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  color: #222;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.contact-info, .contact-form {
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5a;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #005eab;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #004e91;
+}
+    
+    .seccion-espiritual {
+  background: linear-gradient(135deg, #e0f2f1, #ffffff);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #1b4332;
+  position: relative;
+  overflow: hidden;
+}
+
+.seccion-espiritual::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.seccion-espiritual .contenido-espiritual {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.seccion-espiritual h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.seccion-espiritual h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d6a4f;
+  margin-top: 2rem;
+}
+
+.seccion-espiritual .resaltado {
+  color: #2a9d8f;
+  font-weight: bold;
+}
+    
+    
+    /* === Sección: Servicios que ofrecemos a la Comunidad === */
+.servicios-comunidad {
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #1e1e1e;
+}
+
+.servicios-comunidad h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .servicios-comunidad h2 {
+    font-size: 2.5rem;
+  }
+
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.servicio-card {
+  background-color: #f0fdf4;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.servicio-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #15803d;
+  margin-bottom: 0.5rem;
+}
+
+.servicio-card p {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+    .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+    
+
+@media (min-width: 768px) {
+  .seccion-espiritual h4 {
+    font-size: 2rem;
+  }
+
+  .seccion-espiritual h5 {
+    font-size: 1.5rem;
+  }
+}
+
+    
+
+/* Responsive para pantallas grandes */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+    @media (min-width: 768px) {
+      nav a { font-size: 1.1rem; }
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.3rem; }
+      .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" alt="Logo Concilio VA" />
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#salvacion">Salvación</a>
+      <a href="#ministerios">Ministerios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <h1>Bienvenido al Concilio Internacional Visión en Acción</h1>
+      <p>Una comunidad espiritual dedicada a llevar el mensaje de Cristo a todas las naciones.</p>
+    </section>
+<section class="seccion-espiritual">
+  <div class="contenido-espiritual">
+    <h4>¿Necesitas a Jesucristo en tu vida? <br><span class="resaltado">Llámanos hoy mismo para apoyarte, Dios te ama.</span></h4>
+    <h4>Darle gracias al Creador por todas las bendiciones recibidas es la satisfacción más grande que podemos tener en esta vida.</h4>
+    <h5>¡El secreto del buen vivir es siempre obedecer a Jehová!</h5>
+  </div>
+</section>
+
+    <section class="servicios-comunidad" id="servicios">
+  <div class="container">
+    <h2 class="text-center">Servicios que ofrecemos<br>a la Comunidad</h2>
+    <div class="servicios-grid">
+      <!-- Servicio 1 -->
+      <div class="servicio-card">
+        <img src="https://conciliova.org/wp-content/uploads/2023/06/Predicando-la-Palabra-Iglesia-Vision-en-Accion.png" alt="Predicando la Palabra">
+        <h3>Unidad en la Fe</h3>
+        <p>Un ambiente de familiaridad, confraternidad y comunicación.</p>
+      </div>
+
+      <!-- Servicio 2 -->
+      <div class="servicio-card">
+        <img src="https://conciliova.org/wp-content/uploads/2023/06/Iglesia-Vision-en-Accion.png" alt="Ministrando Nuestra Vida">
+        <h3>Ministrando Nuestra Vida</h3>
+        <p>Adoración y alabanzas, unidos en armonía.</p>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="servicio-card">
+        <img src="https://conciliova.org/wp-content/uploads/2023/06/Vision-en-Accion.png" alt="Consejería">
+        <h3>Consejería en todas las áreas</h3>
+        <p>Individual – Prematrimonial – Matrimonial – Familiar – Jóvenes –</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    
+    
+    <section class="section-salvacion" id="salvacion">
+      <h2>¿Quieres recibir a Cristo?</h2>
+      <p>Recibir a Jesucristo como Señor y Salvador es el paso más importante que puedes dar en tu vida. Dios te ama y tiene un propósito maravilloso para ti.</p>
+      <p><strong>Romanos 10:9</strong> – “Si confiesas con tu boca que Jesús es el Señor y crees en tu corazón que Dios lo levantó de entre los muertos, serás salvo”.</p>
+      <p>Haz esta oración en voz alta con fe:</p>
+      <p><em>“Señor Jesús, reconozco que soy pecador. Te pido perdón por mis pecados. Creo que moriste por mí y que resucitaste. Hoy te recibo como mi Señor y Salvador. Haz de mí la persona que tú quieres que yo sea. Amén.”</em></p>
+      <p>Si hiciste esta oración, ¡bienvenido a la familia de Dios! Escríbenos para apoyarte en tu nuevo caminar.</p>
+    </section>
+
+    <section class="info-section" id="ministerios">
+      <div class="info-grid">
+        <div class="info-block card">
+          <h5>Misión</h5>
+          <p>Predicar el evangelio de Jesucristo, discipular naciones y establecer iglesias que vivan conforme a la Palabra de Dios.</p>
+        </div>
+        <div class="info-block card">
+          <h5>Visión</h5>
+          <p>Ser un movimiento espiritual y apostólico que transforme vidas y comunidades a través del poder del Espíritu Santo.</p>
+        </div>
+        <div class="info-block card">
+          <h5>Valores</h5>
+          <p>Integridad, compasión, excelencia, unidad y pasión por las almas.</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <!-- Lado izquierdo: WhatsApp -->
+    <div class="contact-info card">
+      <h2>¿Necesitas ayuda o tienes preguntas?</h2>
+      <p>Contáctanos directamente por WhatsApp y con gusto te atenderemos.</p>
+      <a href="https://wa.me/573001112233" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+      </a>
+    </div>
+
+    <!-- Lado derecho: Formulario -->
+    <div class="contact-form card">
+      <h2>Envíanos un mensaje</h2>
+      <form action="#" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+    
+  </main>
+
+  <footer id="contacto">
+    <p>Concilio Internacional Visión en Acción © 2025 – Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:info@conciliova.org" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
