@@ -1,0 +1,344 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concilio VA – Concilio Internacional Visión en Acción</title>
+  <link rel="profile" href="https://gmpg.org/xfn/11" />
+  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+  <meta name="msapplication-TileImage" content="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons (opcional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Estilo personalizado -->
+  <style>
+    :root {
+      --color-primario: #004d40;
+      --color-secundario: #80cbc4;
+      --color-fondo: #f9f9f9;
+      --color-texto: #212121;
+      --color-claro: #ffffff;
+      --sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --fuente-principal: 'Inter', sans-serif;
+      --ancho-maximo: 1100px;
+      --espacio: 1.5rem;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--fuente-principal);
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+      box-shadow: var(--sombra-suave);
+    }
+
+    header img {
+      max-width: 160px;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: white;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: var(--ancho-maximo);
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    
+    .card {
+  background: rgba(255, 255, 255, 0.05); /* fondo sutil translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* borde tenue */
+  border-radius: 1rem; /* esquinas redondeadas */
+  padding: 2rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* sombra elegante */
+  backdrop-filter: blur(10px); /* efecto vidrio */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+
+    .hero {
+      background: linear-gradient(145deg, #ffffff, #f0fdfa);
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 16px;
+      box-shadow: var(--sombra-suave);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      color: var(--color-primario);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #555;
+    }
+
+    .section-salvacion {
+      background: var(--color-claro);
+      border-radius: 16px;
+      box-shadow: var(--sombra-suave);
+      padding: 3rem 2rem;
+      margin: 4rem auto;
+      max-width: 800px;
+      line-height: 1.8;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    .section-salvacion h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--color-primario);
+    }
+
+    .section-salvacion p {
+      margin-bottom: 1.5rem;
+      color: var(--color-texto);
+      font-size: 1rem;
+    }
+
+    .section-salvacion strong {
+      color: var(--color-primario);
+    }
+
+    footer {
+      background-color: #00251a;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      font-size: 0.95rem;
+      box-shadow: var(--sombra-suave);
+    }
+.info-section {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* espiritual y moderno */
+  color: #fff;
+  padding: 3rem 1.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.info-block h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #ffe600;
+}
+
+.info-block p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.address,
+.social-icons,
+.copyright {
+  margin-top: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #ffe600;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+  }
+}
+
+    
+    
+    /* Animaciones sutiles */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1.35rem;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" alt="Concilio VA Logo">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Una Visión Espiritual para Transformar</h1>
+      <p>Un espacio de unidad, acción y propósito. Bienvenidos al Concilio Internacional Visión en Acción.</p>
+    </section>
+
+    <section class="section-salvacion">
+      <h2>El Camino a la Salvación</h2>
+
+      <p><strong>1. Usted Necesita Ser Salvo(a):</strong><br>
+        «Por cuanto todos pecaron, y están destituidos de la gloria de Dios». (Romanos 3:23)<br>
+        «Respondió Jesús y le dijo: De cierto, de cierto te digo, que el que no naciere de nuevo, no puede ver el Reino de Dios». (Juan 3:3)
+      </p>
+
+      <p><strong>2. Usted No Puede Salvarse a sí Mismo:</strong><br>
+        «Nos salvó, no por obras de justicia que nosotros hubiéramos hecho, sino por la misericordia, por el lavamiento de la regeneración y por la renovación en el Espíritu Santo». (Tito 3:5)
+      </p>
+
+      <p><strong>3. Cristo Ha Provisto Para Usted la Salvación:</strong><br>
+        «Quien llevó él mismo nuestros pecados en su cuerpo sobre el madero, para que nosotros, estando muertos a los pecados, vivamos a la justicia; y por cuya herida fuisteis sanados». (1 Pedro 2:24)
+      </p>
+
+      <p><strong>4. Usted Necesita Recibir a Cristo como su Salvador:</strong><br>
+        «Ellos dijeron: Cree en el Señor Jesucristo y serás salvo, tú y tu casa». (Hechos 16:31)<br>
+        «Más a todos los que le recibieron, a los que creen en su nombre, les dio potestad de ser hechos hijos de Dios». (Juan 1:12)
+      </p>
+
+      <p><strong>5. Hoy es el Tiempo de Recibir a Cristo Como tu Salvador Personal:</strong><br>
+        «Porque dice: En tiempo aceptable te he oído, Y en día de salvación te he socorrido». (2 Corintios 6:2)<br>
+        «Por lo cual, como dice el Espíritu Santo: SI OYEREIS HOY MI VOZ, NO ENDUREZCÁIS VUESTROS CORAZONES». (Hebreos 3:7,8)
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <section class="info-section">
+  <div class="info-grid">
+    <!-- Horarios -->
+    <div class="info-block card">
+      <h5><strong>Servicio presencial todos los domingos</strong></h5>
+      <p>Escuela bíblica 2:00 pm, luego el culto.</p>
+      <p><strong>Martes 7:00 pm:</strong> reunión presencial.</p>
+      <p><strong>Jueves 7:30 pm:</strong> culto virtual.</p>
+      <p class="address">154 Gaston Ave, Garfield, Nueva Jersey. 07026</p>
+    </div>
+
+    <!-- Contacto -->
+    <div class="info-block card">
+      <h5><strong>Jehová te está buscando hoy</strong></h5>
+      <p>Atiende su llamado. Déjanos tus datos y nos pondremos en contacto contigo lo antes posible.</p>
+      <p><strong>Tel:</strong> (201) 834-6685</p>
+      <p><strong>Email:</strong> conciliointvisionenaccion@gmail.com</p>
+    </div>
+
+    <!-- Redes -->
+    <div class="info-block card">
+      <h5><strong>Síguenos en nuestras redes sociales</strong></h5>
+      <p>Comparte la palabra de Dios con todos tus contactos:</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/concilio.va.1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/visionenvivo/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@ConcilioVA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+    <p>&copy; 2025 Concilio VA – Todos los derechos reservados.</p>
+    <p>Diseño inspirado en la espiritualidad, la paz y la simplicidad.</p>
+  </footer>
+</body>
