@@ -3,136 +3,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <title>Concilio VA – Concilio Internacional Visión en Acción</title>
-  <meta name="robots" content="max-image-preview:large">
-  <link rel="canonical" href="https://conciliova.org/">
-  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
-  <meta name="msapplication-TileImage" content="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
 
-  <!-- Google Fonts Modernas & Elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Estilo personalizado moderno con esencia espiritual -->
+  <!-- ✅ ESTILO PERSONALIZADO - Rediseño 2025 con enfoque espiritual y minimalista -->
   <style>
     :root {
-      --color-primario: #3a8473;
-      --color-secundario: #f5faf8;
-      --color-acento: #fdd835;
-      --color-texto: #222;
-      --color-oscuro: #1a1a1a;
-      --color-claro: #ffffff;
-      --font-base: 'Inter', sans-serif;
-      --font-titulo: 'Playfair Display', serif;
+      --color-primario: #004d40;
+      --color-secundario: #80cbc4;
+      --color-fondo: #f9f9f9;
+      --color-texto: #212121;
+      --espacio: 1.5rem;
+      --ancho-maximo: 1200px;
+      --fuente-base: 'Segoe UI', 'Roboto', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: var(--font-base);
-      background: linear-gradient(180deg, #fdfcfb 0%, #f5faf8 100%);
+      font-family: var(--fuente-base);
+      background-color: var(--color-fondo);
       color: var(--color-texto);
-      line-height: 1.7;
-      font-size: 1rem;
-      scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
     header {
-      background: var(--color-primario);
-      color: var(--color-claro);
+      background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+      color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
-      background-image: url('https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png');
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-size: 100px;
+      padding: var(--espacio) 1rem;
     }
 
-    header h1 {
-      font-family: var(--font-titulo);
-      font-size: 2.5rem;
-      margin: 0;
+    header img {
+      max-width: 180px;
+      margin-bottom: 1rem;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      background-color: var(--color-claro);
-      padding: 1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      font-weight: 600;
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
 
     nav a {
-      color: var(--color-primario);
+      color: #ffffff;
       text-decoration: none;
-      transition: all 0.3s ease;
+      font-weight: 500;
+      transition: opacity 0.3s;
     }
 
     nav a:hover {
-      color: var(--color-acento);
+      opacity: 0.8;
     }
 
-    section.hero {
-      padding: 4rem 2rem;
+    main {
+      max-width: var(--ancho-maximo);
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero {
       text-align: center;
-      background: radial-gradient(circle at center, #ffffff, #eaf6f2);
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #ffffff, #f0fdfa);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
 
-    section.hero h2 {
-      font-family: var(--font-titulo);
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+    .hero h1 {
+      font-size: 2.5rem;
       color: var(--color-primario);
     }
 
-    section.hero p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #444;
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #555;
     }
 
     footer {
-      background: var(--color-oscuro);
-      color: #ccc;
+      background-color: #00251a;
+      color: #ffffff;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: var(--color-acento);
+      padding: 2rem 1rem;
+      margin-top: 4rem;
     }
 
     @media (min-width: 768px) {
-      section.hero h2 {
-        font-size: 3.2rem;
+      .hero {
+        padding: 6rem 2rem;
+      }
+      .hero h1 {
+        font-size: 3rem;
       }
     }
   </style>
 
-  <!-- Estilos esenciales para compatibilidad con Elementor -->
-  <link rel="stylesheet" href="https://conciliova.org/wp-content/themes/hello-elementor/assets/css/reset.css?ver=3.4.4">
-  <link rel="stylesheet" href="https://conciliova.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.29.2">
-  <link rel="stylesheet" href="https://conciliova.org/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.40.0">
-  <link rel="stylesheet" href="https://conciliova.org/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css?ver=3.30.0">
-  <link rel="stylesheet" href="https://conciliova.org/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.29.2">
+  <!-- Fuente externa si se desea -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Scripts esenciales -->
-  <script src="https://conciliova.org/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
-  <script src="https://conciliova.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+  <!-- Íconos opcionales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-o8CWyN9KHxpmz+KwRwWZzPvVJ8f50MHd2iMdzCMolhoFhEmvSPB8uXr9M2qT2B6NTeY8bL6gSgm7PbzAr1pbtw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Meta SEO y compatibilidad -->
-  <meta name="generator" content="WordPress 6.5.5">
-  <meta name="generator" content="Elementor 3.29.2">
-  <link rel="alternate" type="application/rss+xml" title="Concilio VA » Feed" href="https://conciliova.org/feed/">
-  <link rel="alternate" type="application/rss+xml" title="Concilio VA » Feed de los comentarios" href="https://conciliova.org/comments/feed/">
+  <!-- Favicon -->
+  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+  <meta name="msapplication-TileImage" content="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+
+  <!-- SEO -->
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="canonical" href="https://conciliova.org/">
+  <link rel="alternate" type="application/rss+xml" title="Concilio VA Feed" href="https://conciliova.org/feed/">
   <link rel="alternate" type="application/json+oembed" href="https://conciliova.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fconciliova.org%2F">
-  <link rel="alternate" type="text/xml+oembed" href="https://conciliova.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fconciliova.org%2F&amp;format=xml">
-
-  <!-- Íconos -->
-  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04-150x150.png" sizes="32x32">
 </head>
+<body>
+  <header>
+    <img src="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" alt="Concilio VA Logo">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Una Visión Espiritual para Transformar</h1>
+      <p>Un espacio de unidad, acción y propósito. Bienvenidos al Concilio Internacional Visión en Acción.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Concilio VA – Todos los derechos reservados.</p>
+    <p>Diseño inspirado en la espiritualidad y la simplicidad.</p>
+  </footer>
+</body>
+
 
 <body class="home page-template-default page page-id-321 wp-custom-logo wp-embed-responsive hello-elementor-default elementor-default elementor-kit-9 elementor-page elementor-page-321 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="tablet">
 
