@@ -1,551 +1,289 @@
-<html lang="es"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="profile" href="https://gmpg.org/xfn/11">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Concilio VA – Concilio Internacional Visión en Acción</title>
+  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
+  <meta name="msapplication-TileImage" content="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
 
-  <!-- ✅ ESTILO PERSONALIZADO - Rediseño 2025 con enfoque espiritual y minimalista -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     :root {
-      --color-primario: #004d40;
-      --color-secundario: #80cbc4;
-      --color-fondo: #f9f9f9;
-      --color-texto: #212121;
-      --espacio: 1.5rem;
-      --ancho-maximo: 1200px;
-      --fuente-base: 'Segoe UI', 'Roboto', sans-serif;
+      --azul-oscuro: #1a2a3a;
+      --azul-medio: #3c6e71;
+      --azul-claro: #d9e6ed;
+      --gris-suave: #f5f8fa;
+      --blanco: #ffffff;
+      --texto-principal: #1e1e1e;
+      --sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --fuente-principal: 'Inter', sans-serif;
+      --ancho-maximo: 1100px;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     body {
-      font-family: var(--fuente-base);
-      background-color: var(--color-fondo);
-      color: var(--color-texto);
+      font-family: var(--fuente-principal);
+      background-color: var(--gris-suave);
+      color: var(--texto-principal);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
-      color: #fff;
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+      padding: 2rem 1rem;
       text-align: center;
-      padding: var(--espacio) 1rem;
+      color: var(--blanco);
+      box-shadow: var(--sombra-suave);
     }
 
     header img {
-      max-width: 180px;
+      max-width: 160px;
       margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
     }
 
     nav {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
+      flex-wrap: wrap;
       margin-top: 1rem;
     }
 
     nav a {
-      color: #ffffff;
+      color: var(--blanco);
       text-decoration: none;
       font-weight: 500;
-      transition: opacity 0.3s;
+      position: relative;
+      transition: all 0.3s ease;
     }
 
-    nav a:hover {
-      opacity: 0.8;
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--blanco);
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
     }
 
     main {
       max-width: var(--ancho-maximo);
-      margin: 2rem auto;
+      margin: 3rem auto;
       padding: 0 1rem;
     }
 
     .hero {
+      background: linear-gradient(145deg, var(--blanco), var(--azul-claro));
       text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(135deg, #ffffff, #f0fdfa);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      padding: 4rem 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--sombra-suave);
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     .hero h1 {
       font-size: 2.5rem;
-      color: var(--color-primario);
+      color: var(--azul-oscuro);
+      margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.2rem;
+      color: #444;
+    }
+
+    .section-salvacion {
+      background: var(--blanco);
+      border-radius: 1rem;
+      box-shadow: var(--sombra-suave);
+      padding: 3rem 2rem;
+      margin: 4rem auto;
+      max-width: 800px;
+      line-height: 1.8;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    .section-salvacion h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--azul-medio);
+    }
+
+    .section-salvacion p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: var(--texto-principal);
+    }
+
+    .section-salvacion strong {
+      color: var(--azul-oscuro);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .info-section {
+      background: linear-gradient(to right, #243b55, #141e30);
+      color: var(--blanco);
+      padding: 3rem 1.5rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .info-block h5 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #e3f2fd;
+    }
+
+    .info-block p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       margin-top: 1rem;
-      color: #555;
+    }
+
+    .social-icons a {
+      color: #ffffff;
+      font-size: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #90caf9;
+      transform: scale(1.2);
     }
 
     footer {
-      background-color: #00251a;
-      color: #ffffff;
+      background-color: #1a2a3a;
+      color: var(--blanco);
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 4rem;
+      font-size: 0.95rem;
+      box-shadow: var(--sombra-suave);
     }
 
     @media (min-width: 768px) {
-      .hero {
-        padding: 6rem 2rem;
-      }
-      .hero h1 {
-        font-size: 3rem;
+      nav a { font-size: 1.1rem; }
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.3rem; }
+      .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
       }
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
-
-  <!-- Fuente externa si se desea -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Íconos opcionales -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-o8CWyN9KHxpmz+KwRwWZzPvVJ8f50MHd2iMdzCMolhoFhEmvSPB8uXr9M2qT2B6NTeY8bL6gSgm7PbzAr1pbtw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
-  <meta name="msapplication-TileImage" content="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png">
-
-  <!-- SEO -->
-  <meta name="robots" content="max-image-preview:large">
-  <link rel="canonical" href="https://conciliova.org/">
-  <link rel="alternate" type="application/rss+xml" title="Concilio VA Feed" href="https://conciliova.org/feed/">
-  <link rel="alternate" type="application/json+oembed" href="https://conciliova.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fconciliova.org%2F">
 </head>
 <body>
   <header>
-    <img src="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" alt="Concilio VA Logo">
+    <img src="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-04.png" alt="Logo Concilio VA" />
     <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
+      <a href="#salvacion">Salvación</a>
+      <a href="#ministerios">Ministerios</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Una Visión Espiritual para Transformar</h1>
-      <p>Un espacio de unidad, acción y propósito. Bienvenidos al Concilio Internacional Visión en Acción.</p>
+    <section class="hero" id="inicio">
+      <h1>Bienvenido al Concilio Internacional Visión en Acción</h1>
+      <p>Una comunidad espiritual dedicada a llevar el mensaje de Cristo a todas las naciones.</p>
+    </section>
+
+    <section class="section-salvacion" id="salvacion">
+      <h2>¿Quieres recibir a Cristo?</h2>
+      <p>Recibir a Jesucristo como Señor y Salvador es el paso más importante que puedes dar en tu vida. Dios te ama y tiene un propósito maravilloso para ti.</p>
+      <p><strong>Romanos 10:9</strong> – “Si confiesas con tu boca que Jesús es el Señor y crees en tu corazón que Dios lo levantó de entre los muertos, serás salvo”.</p>
+      <p>Haz esta oración en voz alta con fe:</p>
+      <p><em>“Señor Jesús, reconozco que soy pecador. Te pido perdón por mis pecados. Creo que moriste por mí y que resucitaste. Hoy te recibo como mi Señor y Salvador. Haz de mí la persona que tú quieres que yo sea. Amén.”</em></p>
+      <p>Si hiciste esta oración, ¡bienvenido a la familia de Dios! Escríbenos para apoyarte en tu nuevo caminar.</p>
+    </section>
+
+    <section class="info-section" id="ministerios">
+      <div class="info-grid">
+        <div class="info-block card">
+          <h5>Misión</h5>
+          <p>Predicar el evangelio de Jesucristo, discipular naciones y establecer iglesias que vivan conforme a la Palabra de Dios.</p>
+        </div>
+        <div class="info-block card">
+          <h5>Visión</h5>
+          <p>Ser un movimiento espiritual y apostólico que transforme vidas y comunidades a través del poder del Espíritu Santo.</p>
+        </div>
+        <div class="info-block card">
+          <h5>Valores</h5>
+          <p>Integridad, compasión, excelencia, unidad y pasión por las almas.</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Concilio VA – Todos los derechos reservados.</p>
-    <p>Diseño inspirado en la espiritualidad y la simplicidad.</p>
+  <footer id="contacto">
+    <p>Concilio Internacional Visión en Acción © 2025 – Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:info@conciliova.org" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+    </div>
   </footer>
 </body>
-
-
-<body class="home page-template-default page page-id-321 wp-custom-logo wp-embed-responsive hello-elementor-default elementor-default elementor-kit-9 elementor-page elementor-page-321 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="tablet">
-
-
-<a class="skip-link screen-reader-text" href="#content">Ir al contenido</a>
-
-		<header data-elementor-type="header" data-elementor-id="110" class="elementor elementor-110 elementor-location-header" data-elementor-post-type="elementor_library">
-					</header>
-		
-<main id="content" class="site-main post-321 page type-page status-publish hentry">
-
-	
-	<div class="page-content">
-				<div data-elementor-type="wp-page" data-elementor-id="321" class="elementor elementor-321" data-elementor-post-type="page">
-						<header class="elementor-section elementor-top-section elementor-element elementor-element-10b533c2 elementor-section-content-middle elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="10b533c2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-716747d6" data-id="716747d6" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-1567e124 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="1567e124" data-element_type="widget" data-widget_type="theme-site-logo.default">
-				<div class="elementor-widget-container">
-											<a href="https://conciliova.org">
-			<img fetchpriority="high" decoding="async" width="2560" height="735" src="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-scaled.jpg" class="attachment-full size-full wp-image-759" alt="" srcset="https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-scaled.jpg 2560w, https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-300x86.jpg 300w, https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-1024x294.jpg 1024w, https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-768x220.jpg 768w, https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-1536x441.jpg 1536w, https://conciliova.org/wp-content/uploads/2023/06/logo_Concilio-01-2048x588.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px">				</a>
-											</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c2f1272" data-id="c2f1272" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-261f0e0 elementor-shape-square e-grid-align-right elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="261f0e0" data-element_type="widget" data-widget_type="social-icons.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-5b1b321" href="https://www.facebook.com/concilio.va.1" target="_blank">
-						<span class="elementor-screen-only">Facebook-f</span>
-						<i class="fab fa-facebook-f"></i>					</a>
-				</span>
-							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-3d6d60d" href="https://www.instagram.com/visionenvivo/" target="_blank">
-						<span class="elementor-screen-only">Instagram</span>
-						<i class="fab fa-instagram"></i>					</a>
-				</span>
-							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-8f2fe13" href="https://www.youtube.com/@ConcilioVA" target="_blank">
-						<span class="elementor-screen-only">Youtube</span>
-						<i class="fab fa-youtube"></i>					</a>
-				</span>
-					</div>
-						</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</header>
-				<nav class="elementor-section elementor-top-section elementor-element elementor-element-3134ac56 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-sticky" data-id="3134ac56" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}" style="">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-28cfe9a" data-id="28cfe9a" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-1575fa0a elementor-nav-menu__align-justify elementor-nav-menu--dropdown-mobile elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="1575fa0a" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;<i class=\&quot;fas fa-caret-down\&quot;><\/i>&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
-				<div class="elementor-widget-container">
-								<nav aria-label="Menú" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-background e--animation-grow">
-				<ul id="menu-1-1575fa0a" class="elementor-nav-menu" data-smartmenus-id="17524978578224663"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-321 current_page_item menu-item-329"><a href="https://conciliova.org/" aria-current="page" class="elementor-item elementor-item-active">Inicio</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a href="https://conciliova.org/acerca-de-nosotros/" class="elementor-item">Acerca de Nosotros</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://conciliova.org/contact-us/" class="elementor-item">Contáctanos</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-332"><a href="https://conciliova.org/donaciones/" class="elementor-item">Donaciones</a></li>
-</ul>			</nav>
-					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Alternar menú" aria-expanded="false" style="">
-			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>		</div>
-					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true" style="top: 60px; --menu-height: 0; width: 796px; left: 0px;">
-				<ul id="menu-2-1575fa0a" class="elementor-nav-menu" data-smartmenus-id="17524978578234558"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-321 current_page_item menu-item-329"><a href="https://conciliova.org/" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Inicio</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a href="https://conciliova.org/acerca-de-nosotros/" class="elementor-item" tabindex="-1">Acerca de Nosotros</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://conciliova.org/contact-us/" class="elementor-item" tabindex="-1">Contáctanos</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-332"><a href="https://conciliova.org/donaciones/" class="elementor-item" tabindex="-1">Donaciones</a></li>
-</ul>			</nav>
-						</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</nav>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-207fbad8 elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="207fbad8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6c594869" data-id="6c594869" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-2e5fb400 elementor-widget elementor-widget-text-editor" data-id="2e5fb400" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>iglesia visión en acción</p>								</div>
-				</div>
-				<div class="elementor-element elementor-element-4e529d17 elementor-widget elementor-widget-heading" data-id="4e529d17" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Convención Anual 2025<br>"Portadores de su gloria"</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-10abc523 elementor-countdown--label-block elementor-widget elementor-widget-countdown" data-id="10abc523" data-element_type="widget" data-widget_type="countdown.default">
-				<div class="elementor-widget-container">
-							<div data-expire-actions="[{&quot;type&quot;:&quot;message&quot;}]" class="elementor-countdown-wrapper" data-date="1759532400">
-			<div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-days">81</span> <span class="elementor-countdown-label">Días</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-hours">09</span> <span class="elementor-countdown-label">Horas</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-minutes">42</span> <span class="elementor-countdown-label">Minutos</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-seconds">35</span> <span class="elementor-countdown-label">Segundos</span></div>		</div>
-						<div class="elementor-countdown-expire--message">
-					Comunícate con nosotros si tienes alguna inquietud o comentario				</div>
-								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-21535aaa elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="21535aaa" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7c818d87" data-id="7c818d87" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-3111c3a6 e-transform elementor-widget elementor-widget-heading" data-id="3111c3a6" data-element_type="widget" data-settings="{&quot;_transform_translateX_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:-49,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h4 class="elementor-heading-title elementor-size-default">¿Necesitas a Jesucristo en tu vida? Llámanos hoy mismo para apoyarte, Dios te ama.</h4>				</div>
-				</div>
-				<div class="elementor-element elementor-element-686f366 elementor-widget elementor-widget-heading" data-id="686f366" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h4 class="elementor-heading-title elementor-size-default">Darle gracias al creador por todas bendiciones recibidas es la satisfacción más grande que podemos tener en esta vida.</h4>				</div>
-				</div>
-				<div class="elementor-element elementor-element-318b9504 elementor-widget elementor-widget-heading" data-id="318b9504" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default">¡El secreto del buen vivir es siempre obedecer a jehova!</h5>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-1c251874 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1c251874" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-503c7d92" data-id="503c7d92" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-4d64152e elementor-widget elementor-widget-heading" data-id="4d64152e" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h4 class="elementor-heading-title elementor-size-default">Servicios que Ofrecemos<br>a la Comunidad</h4>				</div>
-				</div>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-63b46371 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="63b46371" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-6dcc0e3f" data-id="6dcc0e3f" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-1f4666de elementor-widget elementor-widget-image" data-id="1f4666de" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img decoding="async" width="800" height="450" src="https://conciliova.org/wp-content/uploads/2023/06/Predicando-la-Palabra-Iglesia-Vision-en-Accion.png" class="attachment-large size-large wp-image-150" alt="" srcset="https://conciliova.org/wp-content/uploads/2023/06/Predicando-la-Palabra-Iglesia-Vision-en-Accion.png 960w, https://conciliova.org/wp-content/uploads/2023/06/Predicando-la-Palabra-Iglesia-Vision-en-Accion-300x169.png 300w, https://conciliova.org/wp-content/uploads/2023/06/Predicando-la-Palabra-Iglesia-Vision-en-Accion-768x432.png 768w" sizes="(max-width: 800px) 100vw, 800px">															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-58b263f9" data-id="58b263f9" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-2015eb6a elementor-widget elementor-widget-heading" data-id="2015eb6a" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Unidad en la Fé</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-690111dd elementor-widget elementor-widget-text-editor" data-id="690111dd" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Un ambiente de familiaridad, confraternidad y comunicación.</p>								</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-15c486fd" data-id="15c486fd" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-614a6661 e-transform elementor-widget elementor-widget-image" data-id="614a6661" data-element_type="widget" data-settings="{&quot;_transform_translateY_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-												<figure class="wp-caption">
-										<img decoding="async" width="800" height="450" src="https://conciliova.org/wp-content/uploads/2023/06/Iglesia-Vision-en-Accion.png" class="attachment-large size-large wp-image-151" alt="" srcset="https://conciliova.org/wp-content/uploads/2023/06/Iglesia-Vision-en-Accion.png 960w, https://conciliova.org/wp-content/uploads/2023/06/Iglesia-Vision-en-Accion-300x169.png 300w, https://conciliova.org/wp-content/uploads/2023/06/Iglesia-Vision-en-Accion-768x432.png 768w" sizes="(max-width: 800px) 100vw, 800px">											<figcaption class="widget-image-caption wp-caption-text"></figcaption>
-										</figure>
-									</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-69f13ed6 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69f13ed6" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-25ead36c" data-id="25ead36c" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-20f539d elementor-widget elementor-widget-heading" data-id="20f539d" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Ministrando Nuestra Vida</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-34f3f41c elementor-widget elementor-widget-text-editor" data-id="34f3f41c" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Adoración y alabanzas, unidos en armonía.</p>								</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1a84eb1e" data-id="1a84eb1e" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-7dd7e7c6 elementor-widget elementor-widget-image" data-id="7dd7e7c6" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="800" height="450" src="https://conciliova.org/wp-content/uploads/2023/06/Vision-en-Accion.png" class="attachment-large size-large wp-image-149" alt="" srcset="https://conciliova.org/wp-content/uploads/2023/06/Vision-en-Accion.png 960w, https://conciliova.org/wp-content/uploads/2023/06/Vision-en-Accion-300x169.png 300w, https://conciliova.org/wp-content/uploads/2023/06/Vision-en-Accion-768x432.png 768w" sizes="(max-width: 800px) 100vw, 800px">															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-72c1d934" data-id="72c1d934" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-560606a0 elementor-widget elementor-widget-heading" data-id="560606a0" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Consejería en todas las áreas</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-73e3f56d elementor-widget elementor-widget-text-editor" data-id="73e3f56d" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Individual – Prematrimonial – Matrimonial – Familiar – Jóvenes –</p>								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-aaa88fa elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aaa88fa" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bdc975a" data-id="bdc975a" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-8dfe796 elementor-widget elementor-widget-heading" data-id="8dfe796" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Cinco cosas que hoy Dios quiere que usted sepa</h2>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-bbc4972 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="bbc4972" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-90f8d12" data-id="90f8d12" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-44ffe53 elementor-widget elementor-widget-text-editor" data-id="44ffe53" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>1. Usted Necesita Ser Salvo(a):&nbsp;</p><p>«Por cuanto todos pecaron, y están destituidos de la gloria de Dios».(Romanos 3:23)</p><p>«Respondió Jesús y le dijo: De cierto, de cierto te digo, que el que no naciere de nuevo, no puede ver el Reino de Dios».(Juan 3:3)</p><p>2. Usted No Puede Salvarse a sí Mismo:</p><p>«Nos salvó, no por obras de justicia que nosotros hubiéramos hecho, sino por la misericordia, por el lavamiento de la regeneración y por la renovación en el Espíritu Santo».(Tito 3:5)</p><p>3. Cristo Ha Provisto Para Usted la Salvación:</p><p>«Quien llevó el mismo nuestro pecados en su cuerpo sobre el madero, para nosotros, estando muertos a los pecados, vivamos a la justicia; y por cuya herida fuisteis sanados».(1Pedro 2:24)</p><p>4. Usted Necesita Recibir a Cristo como su Salvador:</p><p>«Ellos dijeron: Cree en el Señor Jesucristo y serás salvo, tú y tu casa».(Hechos 16:31)</p><p>«Más a todos los que le recibieron, a los que creen en su nombre, les dió potestad de ser hechos hijos de Dios». (Juan 1:12)</p><p>5. Hoy es el Tiempo de Recibir a Cristo Como tu Salvador Personal:</p><p>«Porque dice: En tiempo aceptable te he oído, Y en día de salvación te he socorrido». (2Corintios 6:2)</p><p>«Por lo cual, como dice el Espíritu Santo: SI OYEREIS HOY MI VOZ, NO ENDUREZCAIS VUESTROS CORAZONES». (Hebreos 3:7,8)</p><p>&nbsp;</p>								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-685e0ff3 elementor-section-full_width elementor-section-height-min-height elementor-section-items-stretch elementor-section-height-default" data-id="685e0ff3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-110513d8" data-id="110513d8" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<section class="elementor-section elementor-inner-section elementor-element elementor-element-2fbd923d elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="2fbd923d" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-478cd683" data-id="478cd683" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-6c629c04 elementor-widget elementor-widget-heading" data-id="6c629c04" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default"><strong>tenemos servicio presencial todos los domingos</strong><br>escuela biblica 2:00pm, luego el culto.<br> y <b>todos los martes 7:00pm.</b><br><strong>culto virtual todos los jueves 7:30pm.</strong></h5>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-6910b2f3 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="6910b2f3" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-11ae84a2" data-id="11ae84a2" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-77b8c172 elementor-widget elementor-widget-text-editor" data-id="77b8c172" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>154 Gaston Ave, Garfield<br>Nueva Jersey. 07026</p>								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6a432bbc" data-id="6a432bbc" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<section class="elementor-section elementor-inner-section elementor-element elementor-element-27685268 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="27685268" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-172bb5d9" data-id="172bb5d9" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-279db56c elementor-widget elementor-widget-heading" data-id="279db56c" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default"><strong>Jehová te está buscando hoy, </strong>atiende su llamada. dejanos tus datos y nos pondremos en contacto contigo en el menor tiempo posible</h5>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-78ad604a elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="78ad604a" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-5fd88396" data-id="5fd88396" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-754401f5 elementor-widget elementor-widget-text-editor" data-id="754401f5" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>(201) 834-6685</p><p><span style="color: #e4e6eb; font-family: 'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; text-align: left; background-color: #242526;">conciliointvisionenaccion@gmail.com</span></p>								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6d35ea15" data-id="6d35ea15" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<section class="elementor-section elementor-inner-section elementor-element elementor-element-6f29998b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="6f29998b" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-11c7f50c" data-id="11c7f50c" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-4199637e elementor-widget elementor-widget-heading" data-id="4199637e" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default"><strong>síguenos en todas nuestras redes sociales,</strong><br><strong>comparte la palabra de dios con todos tus contactos estamos en facebook - instagram - youtube:</strong></h5>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-5c7ebab1 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="5c7ebab1" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4528412b" data-id="4528412b" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-744c6bc9 elementor-shape-square elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="744c6bc9" data-element_type="widget" data-widget_type="social-icons.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-fac13cb" href="https://www.facebook.com/concilio.va.1" target="_blank">
-						<span class="elementor-screen-only">Facebook-f</span>
-						<i class="fab fa-facebook-f"></i>					</a>
-				</span>
-							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-3877a43" href="https://www.instagram.com/visionenvivo/" target="_blank">
-						<span class="elementor-screen-only">Instagram</span>
-						<i class="fab fa-instagram"></i>					</a>
-				</span>
-							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-467570f" href="https://www.youtube.com/@ConcilioVA" target="_blank">
-						<span class="elementor-screen-only">Youtube</span>
-						<i class="fab fa-youtube"></i>					</a>
-				</span>
-					</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-666040ff elementor-widget elementor-widget-text-editor" data-id="666040ff" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>© 2025. Todos los derechos reservados.</p>								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-					</div>
-		</div>
-					</div>
-		</section>
-				</div>
-		
-		
-			</div>
-
-	
-</main>
-
-			<div data-elementor-type="footer" data-elementor-id="128" class="elementor elementor-128 elementor-location-footer" data-elementor-post-type="elementor_library">
-					</div>
-		
-			<script>
-				const lazyloadRunObserver = () => {
-					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
-					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
-						entries.forEach( ( entry ) => {
-							if ( entry.isIntersecting ) {
-								let lazyloadBackground = entry.target;
-								if( lazyloadBackground ) {
-									lazyloadBackground.classList.add( 'e-lazyloaded' );
-								}
-								lazyloadBackgroundObserver.unobserve( entry.target );
-							}
-						});
-					}, { rootMargin: '200px 0px 200px 0px' } );
-					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
-						lazyloadBackgroundObserver.observe( lazyloadBackground );
-					} );
-				};
-				const events = [
-					'DOMContentLoaded',
-					'elementor/lazyload/observe',
-				];
-				events.forEach( ( event ) => {
-					document.addEventListener( event, lazyloadRunObserver );
-				} );
-			</script>
-			<script src="https://conciliova.org/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.4.4" id="hello-theme-frontend-js"></script>
-<script src="https://conciliova.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.29.2" id="elementor-webpack-runtime-js"></script>
-<script src="https://conciliova.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.29.2" id="elementor-frontend-modules-js"></script>
-<script src="https://conciliova.org/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
-<script id="elementor-frontend-js-before">
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","download":"Descargar","downloadImage":"Descargar imagen","fullscreen":"Pantalla completa","zoom":"Zoom","share":"Compartir","playVideo":"Reproducir v\u00eddeo","previous":"Anterior","next":"Siguiente","close":"Cerrar","a11yCarouselPrevSlideMessage":"Diapositiva anterior","a11yCarouselNextSlideMessage":"Diapositiva siguiente","a11yCarouselFirstSlideMessage":"Esta es la primera diapositiva","a11yCarouselLastSlideMessage":"Esta es la \u00faltima diapositiva","a11yCarouselPaginationBulletMessage":"Ir a la diapositiva"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"M\u00f3vil vertical","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"M\u00f3vil horizontal","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tableta vertical","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tableta horizontal","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Pantalla grande","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.29.2","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"e_local_google_fonts":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"editor_v2":true,"home_screen":true,"cloud-library":true,"e_opt_in_v4_page":true},"urls":{"assets":"https:\/\/conciliova.org\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/conciliova.org\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/conciliova.org\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"2bdbb9dae2"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"hello_header_menu_layout":"dropdown","active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","hello_header_logo_type":"logo","hello_footer_logo_type":"logo"},"post":{"id":321,"title":"Concilio%20VA%20%E2%80%93%20Concilio%20Internacional%20Visi%C3%B3n%20en%20Acci%C3%B3n","excerpt":"","featuredImage":false}};
-</script>
-<script src="https://conciliova.org/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.29.2" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
-<script src="https://conciliova.org/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1" id="smartmenus-js"></script>
-<script src="https://conciliova.org/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.30.0" id="e-sticky-js"></script>
-<script src="https://conciliova.org/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.30.0" id="elementor-pro-webpack-runtime-js"></script>
-<script src="https://conciliova.org/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js"></script>
-<script src="https://conciliova.org/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.14.0" id="regenerator-runtime-js"></script>
-<script src="https://conciliova.org/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
-<script src="https://conciliova.org/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18" id="wp-hooks-js"></script>
-<script src="https://conciliova.org/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
-<script id="wp-i18n-js-after">
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-</script>
-<script id="elementor-pro-frontend-js-before">
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/conciliova.org\/wp-admin\/admin-ajax.php","nonce":"90c9d01936","urls":{"assets":"https:\/\/conciliova.org\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/conciliova.org\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"es_ES","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/conciliova.org\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
-</script>
-<script src="https://conciliova.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.30.0" id="elementor-pro-frontend-js"></script>
-<script src="https://conciliova.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.30.0" id="pro-elements-handlers-js"></script><svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
-
-
-
-</body></html>
+</html>
