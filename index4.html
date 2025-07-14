@@ -282,6 +282,65 @@
 .contact-form button:hover {
   background-color: #004e91;
 }
+    
+    .seccion-espiritual {
+  background: linear-gradient(135deg, #e0f2f1, #ffffff);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #1b4332;
+  position: relative;
+  overflow: hidden;
+}
+
+.seccion-espiritual::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.seccion-espiritual .contenido-espiritual {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.seccion-espiritual h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.seccion-espiritual h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d6a4f;
+  margin-top: 2rem;
+}
+
+.seccion-espiritual .resaltado {
+  color: #2a9d8f;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .seccion-espiritual h4 {
+    font-size: 2rem;
+  }
+
+  .seccion-espiritual h5 {
+    font-size: 1.5rem;
+  }
+}
+
+    
 
 /* Responsive para pantallas grandes */
 @media (min-width: 768px) {
@@ -333,7 +392,16 @@
       <h1>Bienvenido al Concilio Internacional Visión en Acción</h1>
       <p>Una comunidad espiritual dedicada a llevar el mensaje de Cristo a todas las naciones.</p>
     </section>
+<section class="seccion-espiritual">
+  <div class="contenido-espiritual">
+    <h4>¿Necesitas a Jesucristo en tu vida? <br><span class="resaltado">Llámanos hoy mismo para apoyarte, Dios te ama.</span></h4>
+    <h4>Darle gracias al Creador por todas las bendiciones recibidas es la satisfacción más grande que podemos tener en esta vida.</h4>
+    <h5>¡El secreto del buen vivir es siempre obedecer a Jehová!</h5>
+  </div>
+</section>
 
+    
+    
     <section class="section-salvacion" id="salvacion">
       <h2>¿Quieres recibir a Cristo?</h2>
       <p>Recibir a Jesucristo como Señor y Salvador es el paso más importante que puedes dar en tu vida. Dios te ama y tiene un propósito maravilloso para ti.</p>
